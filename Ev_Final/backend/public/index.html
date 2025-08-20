@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Platos</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Platos</h1>
+
+      <section class="card">
+        <h2>Pon tu plato</h2>
+        <form id="dish-form">
+          <input type="hidden" id="dish-id" />
+          <div class="grid">
+            <label>Nombre
+              <input id="name" required />
+            </label>
+            <label>Precio (S/)
+              <input id="price" type="number" min="0" step="0.01" required />
+            </label>
+            <label>Categoría
+              <select id="category">
+                <option>Entrada</option>
+                <option>Fondo</option>
+                <option>Postre</option>
+                <option>Bebida</option>
+              </select>
+            </label>
+            <label>Picanton
+              <input id="spicy" type="checkbox" />
+            </label>
+          </div>
+          <label>Descripción
+            <textarea id="description" rows="2"></textarea>
+          </label>
+          <div class="actions">
+            <button type="submit" id="submit-btn">Guardar</button>
+            <button type="button" id="reset-btn" class="secondary">Limpiar</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="card">
+        <h2>Listado de Platos</h2>
+        <div class="toolbar">
+          <input id="search" placeholder="Buscar..." />
+          <select id="filter-category">
+            <option value="">Todas</option>
+            <option>Entrada</option>
+            <option>Fondo</option>
+            <option>Postre</option>
+            <option>Bebida</option>
+          </select>
+          
+        </div>
+        <table id="dishes-table">
+          <thead>
+            <tr>
+              <th>Nombre</th><th>Precio</th><th>Categoría</th><th>Picante</th><th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+        <div class="pagination">
+          <button id="prev">Anterior</button>
+          <span id="page-indicator"></span>
+          <button id="next">Siguiente</button>
+        </div>
+      </section>
+    </div>
+    <script src="/app.js"></script>
+  </body>
+</html>
